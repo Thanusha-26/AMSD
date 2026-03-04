@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React HTML Rendering</title>
+</head>
+<body>
+
+<!-- React will render content here -->
+<div id="root"></div>
+
+<!-- React Libraries -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+<script>
+    // Create HTML element using React
+    const element = React.createElement(
+        "h1",
+        null,
+        "Hello React"
+    );
+
+    // Render HTML to the webpage
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(element);
+</script>
+
+</body>
+</html>
