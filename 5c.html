@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Components Program</title>
+</head>
+<body>
+
+<!-- Root element -->
+<div id="root"></div>
+
+<!-- React libraries -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<!-- React Code -->
+<script type="text/babel">
+
+    // Function Component
+    function Header() {
+        return <h1>Function Component</h1>;
+    }
+
+    // Class Component
+    class Content extends React.Component {
+        render() {
+            return <p>Class Component</p>;
+        }
+    }
+
+    // Parent Component (Nesting)
+    function App() {
+        return (
+            <div>
+                <Header />
+                <Content />
+            </div>
+        );
+    }
+
+    // Render to webpage
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+
+</script>
+
+</body>
+</html>
