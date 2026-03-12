@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React Forms</title>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+
+    class MyForm extends React.Component {
+        constructor() {
+            super();
+            this.state = { name: "", gender: "" };
+        }
+
+        handleChange = (event) => {
+            this.setState({ [event.target.name]: event.target.value });
+        }
+
+        render() {
+            return (
+                <form>
+                    <p>
+                        Name:
+                        <input type="text" name="name" onChange={this.handleChange} />
+                    </p>
+
+                    <p>
+                        Gender:
+                        <select name="gender" onChange={this.handleChange}>
+                            <option value="">Select</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        Name: {this.state.name}<br/>
+                        Gender: {this.state.gender}
+                    </p>
+                </form>
+            );
+        }
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<MyForm />);
+
+</script>
+
+</body>
+</html>
