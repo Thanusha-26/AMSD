@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sharing Data Example</title>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+
+    function Child(props) {
+        return <h2>Message: {props.message}</h2>;
+    }
+
+    function Parent() {
+        const text = "Hello from Parent Component";
+
+        return (
+            <div>
+                <Child message={text} />
+            </div>
+        );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<Parent />);
+
+</script>
+
+</body>
+</html>
